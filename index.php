@@ -27,8 +27,21 @@ class BoldMacro implements Latte\IMacro
 
 }
 
+
+class BoldMacro2 extends Latte\Macros\MacroSet
+{
+	function install()
+	{
+		//$latte->addMacro('bold', $this);
+		//$this->addMacro('bold', 'echo "<b>"', 'echo "</b>"');
+		$this->addMacro('bold', '?><b><?php', '?></b><?php');
+	}
+}
+
+
 $latte->onCompile[] = function($latte) {
-	$latte->addMacro('bold', new BoldMacro);
+	$macro = new BoldMacro2($latte->getCompiler());
+	$macro->install();
 	//$latte->addMacro('bold', new BoldMacro2);
 };
 
