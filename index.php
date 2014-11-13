@@ -71,7 +71,7 @@ $latte->onCompile[] = function($latte) {
 <body title=ahoj>
 {if true}
 	<p id=123 n:bold>
-	{bold presenter:action  |trim}{$var}{/bold}
+	{bold presenter:action, 123, abc, $var  |trim}{$var}{/bold}
 	</p>
 {/if}
 </body>
