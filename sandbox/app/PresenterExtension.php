@@ -15,7 +15,10 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 		$this->validateConfig($this->defaults);
 
 		$builder = $this->getContainerBuilder();
-		$builder->addDependency(__FILE__);
+		//$builder->addDependency(__FILE__);
+
+		$builder->addDefinition('pokus')
+			->setFactory('stdClass');
 	}
 
 }
