@@ -58,7 +58,7 @@ $latte->onCompile[] = function($latte) {
 echo $latte->compile('
 <body title=ahoj>
 {if true}
-	<p>
+	<p id=123>
 	{bold presenter:action  |trim}{$var}{/bold}
 	</p>
 {/if}
