@@ -15,12 +15,14 @@ class BoldMacro implements Latte\IMacro
 
 	function nodeOpened(Latte\MacroNode $node)
 	{
-		dump($node);
+		//dump($node);
 	}
 
 	function nodeClosed(Latte\MacroNode $node)
 	{
-		dump($node);
+		//dump($node);
+		$node->openingCode = '<b>';
+		$node->closingCode = '</b>';
 	}
 
 }
@@ -31,7 +33,9 @@ $latte->onCompile[] = function($latte) {
 };
 
 echo $latte->compile('
+{if true}
 	{bold 123 |trim}{$var}{/bold}
+{/if}
 ');
 
 
