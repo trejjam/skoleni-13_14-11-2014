@@ -7,10 +7,11 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 		'hello' => '',
 	);
 
-	function __construct($loader)
+	private $classes;
+
+	function __construct(array $classes)
 	{
-
-
+		$this->classes = $classes;
 	}
 
 	function loadConfiguration()
