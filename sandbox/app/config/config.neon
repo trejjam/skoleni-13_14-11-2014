@@ -32,7 +32,8 @@ extensions:
 	presenter: PresenterExtension
 
 presenter:
-	data: 123
+	data: 1234
+	helo: abc
 
 
 decorator:
