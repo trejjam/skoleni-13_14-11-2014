@@ -12,9 +12,14 @@ $configurator->addParameters([
 	'ahoj' => 'hello',
 ]);
 
-$configurator->createRobotLoader()
+$loader = $configurator->createRobotLoader()
 	->addDirectory(__DIR__)
 	->register();
+
+$configurator->onCompile[] = function($configurator, $compiler) use ($loader) {
+	$ext = new PresenterExtension($loader);
+	$compiler->addExtension('presenter', $ext);
+};
 
 $configurator->addConfig(__DIR__ . '/config/config.neon');
 $configurator->addConfig(__DIR__ . '/config/config.local.neon');

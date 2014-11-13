@@ -7,6 +7,12 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 		'hello' => '',
 	);
 
+	function __construct($loader)
+	{
+
+
+	}
+
 	function loadConfiguration()
 	{
 		$config = $this->getConfig($this->defaults);
@@ -18,7 +24,8 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 		//$builder->addDependency(__FILE__);
 
 		$builder->addDefinition('pokus')
-			->setFactory('stdClass');
+			->setFactory('stdClass')
+			->addSetup('setXyz', [123, 456]);
 	}
 
 }
