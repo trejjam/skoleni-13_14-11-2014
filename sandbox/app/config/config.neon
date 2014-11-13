@@ -33,7 +33,7 @@ extensions:
 
 presenter:
 	data: 1234
-	helo: abc
+	hello: abc
 
 
 decorator:

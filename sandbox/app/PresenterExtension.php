@@ -13,6 +13,9 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 		//dump($config);
 
 		$this->validateConfig($this->defaults);
+
+		$builder = $this->getContainerBuilder();
+		$builder->addDependency(__FILE__);
 	}
 
 }
