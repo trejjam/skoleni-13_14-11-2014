@@ -11,13 +11,14 @@ use Nette,
  */
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
-	/** @var \PDO */
-	private $pdo;
+	/** @var \PDO  @inject */
+	public $pdo;
 
+/*
 	function injectBase(\PDO $pdo)
 	{
 		$this->pdo = $pdo;
 	}
-
+*/
 
 }

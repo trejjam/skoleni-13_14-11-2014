@@ -59,9 +59,10 @@ services:
 
 	form:
 		implement: FormFactory
+		parameters: [a]
 		factory: Nette\Application\UI\Form
 		setup:
-			- addText(name, Jméno)
+			- addText(name, Jméno, NULL, %a%)
 			- addSubmit(send, Odeslat)
 			- setTranslator()
 
