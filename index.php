@@ -36,13 +36,14 @@ class BoldMacro2 extends Latte\Macros\MacroSet
 		$this->addMacro('bold',
 		 //'echo %escape(%modify($presenter->link(%node.word, %node.array?)))',
 		 [$this, 'boldOpened'],
-		 'echo "</b>"'
+		 'echo "</b>"',
+		 'AHOJ'
 		);
 	}
 
 	function boldOpened($node, $writer)
 	{
-		dump($node);
+		//dump($node);
 		return $writer->write('echo %escape(%modify($presenter->link(%node.word, %node.array?)))');
 	}
 
@@ -58,7 +59,7 @@ $latte->onCompile[] = function($latte) {
 echo $latte->compile('
 <body title=ahoj>
 {if true}
-	<p id=123>
+	<p id=123 n:bold>
 	{bold presenter:action  |trim}{$var}{/bold}
 	</p>
 {/if}
