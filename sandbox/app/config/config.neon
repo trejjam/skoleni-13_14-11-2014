@@ -26,7 +26,16 @@ nette:
 services:
 	-
 		factory: PdoFactory::create('mysql:host=%dbhost%', %user%)
+		setup:
+			- setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)
+
 		#class: PDO
+
+	#pdofac2: PdoFactory2('mysql:host=%dbhost%')
+
+	#- @pdofac2::create(%user%)::query()
+
+	#- PdoFactory2('mysql:host=%dbhost%')::create(%user%)
 
 	- App\Model\Article(123)
 
