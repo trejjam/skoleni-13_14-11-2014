@@ -77,5 +77,5 @@ $latte->render('
 	<p>{$var|xx}</p>
 
 ', array(
-	'var' => 123,
+	'var' => '<b>',
 ));
