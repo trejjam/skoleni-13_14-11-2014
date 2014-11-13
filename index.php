@@ -49,6 +49,9 @@ class BoldMacro2 extends Latte\Macros\MacroSet
 
 }
 
+$latte->addFilter('xx', function($s) {
+	return '**' . $s . '**';
+});
 
 $latte->onCompile[] = function($latte) {
 	$macro = new BoldMacro2($latte->getCompiler());
@@ -56,7 +59,9 @@ $latte->onCompile[] = function($latte) {
 	//$latte->addMacro('bold', new BoldMacro2);
 };
 
-echo $latte->compile('
+/*echo $latte->compile('
+{$var}
+
 <body title=ahoj>
 {if true}
 	<p id=123 n:bold>
@@ -64,14 +69,13 @@ echo $latte->compile('
 	</p>
 {/if}
 </body>
-');
+');*/
 
 
-/*
+
 $latte->render('
-	<p>{$var}</p>
+	<p>{$var|xx}</p>
 
 ', array(
 	'var' => 123,
 ));
-*/
