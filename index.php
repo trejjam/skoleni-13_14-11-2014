@@ -34,7 +34,7 @@ class BoldMacro2 extends Latte\Macros\MacroSet
 	{
 		//$latte->addMacro('bold', $this);
 		$this->addMacro('bold',
-		 'echo $presenter->link(%node.word, %node.array?)',
+		 'echo %escape(%modify($presenter->link(%node.word, %node.array?)))',
 		 'echo "</b>"'
 		);
 	}
