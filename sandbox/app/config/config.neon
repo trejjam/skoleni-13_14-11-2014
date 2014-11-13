@@ -63,6 +63,9 @@ services:
 		setup:
 			- addText(name, Jméno)
 			- addSubmit(send, Odeslat)
+			- setTranslator()
+
+	translator: MyTranslator
 
 	- App\Model\UserManager(..., ..., @two)
 	- App\Forms\SignFormFactory

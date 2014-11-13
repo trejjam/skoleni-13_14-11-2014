@@ -14,7 +14,7 @@ class HomepagePresenter extends BasePresenter
 
 	function __construct($path, \FormFactory $ff)
 	{
-		dump($ff->create());
+		dump($ff->create(123));
 	}
 
 	function inject()
