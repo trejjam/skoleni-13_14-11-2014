@@ -14,7 +14,12 @@ class HomepagePresenter extends BasePresenter
 
 	function __construct($path)
 	{
-		$this->getUser();
+	}
+
+	function inject()
+	{
+		dump($this->getUser());
+
 	}
 
 	public function renderDefault()
