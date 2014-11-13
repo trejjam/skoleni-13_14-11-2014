@@ -33,8 +33,7 @@ class BoldMacro2 extends Latte\Macros\MacroSet
 	function install()
 	{
 		//$latte->addMacro('bold', $this);
-		//$this->addMacro('bold', 'echo "<b>"', 'echo "</b>"');
-		$this->addMacro('bold', '?><b><?php', '?></b><?php');
+		$this->addMacro('bold', 'echo %node.args', 'echo "</b>"');
 	}
 }
 
@@ -47,7 +46,7 @@ $latte->onCompile[] = function($latte) {
 
 echo $latte->compile('
 {if true}
-	{bold 123 |trim}{$var}{/bold}
+	{bold 123, 567 |trim}{$var}{/bold}
 {/if}
 ');
 
