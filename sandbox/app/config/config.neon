@@ -56,6 +56,13 @@ services:
 		factory: App\Model\Article(999)
 		autowired: no
 
+
+	form:
+		factory: Nette\Application\UI\Form
+		setup:
+			- addText(name, Jméno)
+			- addSubmit(send, Odeslat)
+
 	- App\Model\UserManager(..., ..., @two)
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory()::createRouter

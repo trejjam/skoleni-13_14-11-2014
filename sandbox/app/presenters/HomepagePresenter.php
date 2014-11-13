@@ -12,13 +12,14 @@ use Nette,
 class HomepagePresenter extends BasePresenter
 {
 
-	function __construct($path)
+	function __construct($path, \FormFactory $ff)
 	{
+		dump($ff->create());
 	}
 
 	function inject()
 	{
-		dump($this->getUser());
+		//dump($this->getUser());
 
 	}
 
@@ -28,3 +29,5 @@ class HomepagePresenter extends BasePresenter
 	}
 
 }
+
+
