@@ -1,2 +1,3 @@
 "seleniumHQ" 
 "travis-ci" 
+take testy nginx 
