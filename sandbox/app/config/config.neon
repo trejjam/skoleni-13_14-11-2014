@@ -28,8 +28,12 @@ nette:
 			franta: xxx
 			pepa: yyy
 
+extensions:
+	presenter: PresenterExtension
 
-ahoj:
+presenter:
+	data: 123
+
 
 decorator:
 	Nette\Application\UI\Presenter:
