@@ -23,10 +23,22 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 
 		$builder = $this->getContainerBuilder();
 		//$builder->addDependency(__FILE__);
+		$counter = 1;
 
-		$builder->addDefinition('pokus')
+		foreach ($this->classes as $class) {
+			$rc = new \ReflectionClass($class);
+			if ($rc->isSubclassOf('Nette\Application\UI\Presenter')
+				&& $rc->isInstantiable()
+			) {
+				$builder->addDefinition($this->prefix($counter++))
+					->setFactory($class)
+					->setInject(TRUE);
+			}
+		}
+
+		/*$builder->addDefinition('pokus')
 			->setFactory('stdClass')
-			->addSetup('setXyz', [123, 456]);
+			->addSetup('setXyz', [123, 456]);*/
 	}
 
 }
