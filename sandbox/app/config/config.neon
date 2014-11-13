@@ -29,6 +29,8 @@ nette:
 			pepa: yyy
 
 
+ahoj:
+
 decorator:
 	Nette\Application\UI\Presenter:
 	#	inject: yes
