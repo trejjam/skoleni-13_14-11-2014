@@ -5,11 +5,11 @@
 # http://nette.org/security-warning
 #
 parameters:
-
+	user: root
+	dbhost: 127.0.0.1
 
 php:
 	date.timezone: Europe/Prague
-
 
 nette:
 	application:
@@ -23,10 +23,9 @@ nette:
 	container:
 		debugger: yes
 
-
 services:
 	-
-		factory: PdoFactory::create('mysql:host=127.0.0.1', 'root')
+		factory: PdoFactory::create('mysql:host=%dbhost%', %user%)
 		#class: PDO
 
 	- App\Model\Article(123)
