@@ -3,10 +3,14 @@
 class PdoFactory
 {
 
-	static function create()
+	/**
+	 * @return PDO
+	 */
+	static function create($dsn, $user)
 	{
-		$pass = time() % 2 ? 'xxx' : 'yyy';
-		$pdo = new PDO('mysql:host=127.0.0.1', 'root', $pass);
+		//$pass = time() % 2 ? 'xxx' : 'yyy';
+		$pass = 'xxx';
+		$pdo = new PDO($dsn, $user, $pass);
 		return $pdo;
 	}
 

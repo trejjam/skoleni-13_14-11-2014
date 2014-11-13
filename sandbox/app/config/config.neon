@@ -25,6 +25,10 @@ nette:
 
 
 services:
+	-
+		factory: PdoFactory::create('mysql:host=127.0.0.1', 'root')
+		#class: PDO
+
 	- App\Model\Article(123)
 
 	#two: App\Model\Article(999)
@@ -35,6 +39,6 @@ services:
 		factory: App\Model\Article(999)
 		autowired: no
 
-	- App\Model\UserManager(..., ..., App\Model\Article(777))
+	- App\Model\UserManager(..., ..., @two)
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory()::createRouter
