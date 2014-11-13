@@ -26,12 +26,12 @@ nette:
 
 decorator:
 	Nette\Application\UI\Presenter:
-		inject: yes
+	#	inject: yes
 
 services:
 	-
 		factory: App\Presenters\HomepagePresenter('/dir/web')
-		#inject: yes
+		inject: yes
 
 	-
 		factory: PdoFactory::create('mysql:host=%dbhost%', %user%)
