@@ -8,6 +8,9 @@ $configurator->setDebugMode(TRUE); // enable for your remote IP
 $configurator->enableDebugger(__DIR__ . '/../log');
 
 $configurator->setTempDirectory(__DIR__ . '/../temp');
+$configurator->addParameters([
+	'ahoj' => 'hello',
+]);
 
 $configurator->createRobotLoader()
 	->addDirectory(__DIR__)

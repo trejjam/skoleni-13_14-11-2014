@@ -29,6 +29,8 @@ decorator:
 	#	inject: yes
 
 services:
+	- Nette\Security\SimpleAuthenticator([franta: xxx, pepa: yyy])
+
 	-
 		factory: App\Presenters\HomepagePresenter('/dir/web')
 		inject: yes
@@ -68,6 +70,6 @@ services:
 
 	translator: MyTranslator
 
-	- App\Model\UserManager(..., ..., @two)
+	#- App\Model\UserManager(..., ..., @two)
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory()::createRouter
