@@ -1,12 +1,9 @@
 <?php
 
-class FormFactory
+interface FormFactory
 {
 
 	/** @return Nette\Application\UI\Form */
-	function create()
-	{
-
-	}
+	function create();
 
 }

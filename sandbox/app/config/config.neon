@@ -58,6 +58,7 @@ services:
 
 
 	form:
+		implement: FormFactory
 		factory: Nette\Application\UI\Form
 		setup:
 			- addText(name, Jméno)
