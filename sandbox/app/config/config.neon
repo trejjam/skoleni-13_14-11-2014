@@ -24,6 +24,8 @@ nette:
 		debugger: yes
 
 services:
+	- App\Presenters\HomepagePresenter('/dir/web')
+
 	-
 		factory: PdoFactory::create('mysql:host=%dbhost%', %user%)
 		setup:

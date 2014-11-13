@@ -12,9 +12,9 @@ use Nette,
 class HomepagePresenter extends BasePresenter
 {
 
-	function __construct(\PDO $pdo)
+	function __construct($path)
 	{
-
+		$this->getUser();
 	}
 
 	public function renderDefault()
