@@ -44,7 +44,11 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 
 	function afterCompile(Nette\PhpGenerator\ClassType $class)
 	{
-		dump($class);
+		$router = eval($class->methods['createServiceRouter']->body);
+		//dump($router);
+		$class->methods['createServiceRouter']->setBody(
+			'return unserialize(?);', array(serialize($router))
+		);
 	}
 
 }
