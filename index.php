@@ -50,8 +50,14 @@ class BoldMacro2 extends Latte\Macros\MacroSet
 }
 
 $latte->addFilter('xx', function($s) {
-	return '**' . $s . '**';
+	return new Latte\Runtime\Html('**' . $s . '**');
 });
+
+$latte->addFilter(NULL, function($name, $s) {
+	return $s;
+});
+
+
 
 $latte->onCompile[] = function($latte) {
 	$macro = new BoldMacro2($latte->getCompiler());
@@ -74,7 +80,7 @@ $latte->onCompile[] = function($latte) {
 
 
 $latte->render('
-	<p>{$var|xx}</p>
+	<p>{$var|yyy}</p>
 
 ', array(
 	'var' => '<b>',
