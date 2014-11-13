@@ -23,17 +23,18 @@ nette:
 	container:
 		debugger: yes
 
+	security:
+		users:
+			franta: xxx
+			pepa: yyy
+
 
 decorator:
 	Nette\Application\UI\Presenter:
 	#	inject: yes
 
 services:
-	- Nette\Security\SimpleAuthenticator([franta: xxx, pepa: yyy])
-
-	-
-		factory: App\Presenters\HomepagePresenter('/dir/web')
-		inject: yes
+	#- Nette\Security\SimpleAuthenticator([franta: xxx, pepa: yyy])
 
 	-
 		factory: PdoFactory::create('mysql:host=%dbhost%', %user%)

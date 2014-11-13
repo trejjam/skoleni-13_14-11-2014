@@ -12,9 +12,9 @@ use Nette,
 class HomepagePresenter extends BasePresenter
 {
 
-	function __construct($path, \FormFactory $ff)
+	function __construct(\FormFactory $ff)
 	{
-		dump($ff->create(123));
+		//dump($ff->create(123));
 	}
 
 	function inject()
