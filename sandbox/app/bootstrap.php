@@ -17,7 +17,8 @@ $loader = $configurator->createRobotLoader()
 	->register();
 
 $configurator->onCompile[] = function($configurator, $compiler) use ($loader) {
-	$ext = new PresenterExtension($loader);
+	$classes = array_keys($loader->getIndexedClasses());
+	$ext = new PresenterExtension($classes);
 	$compiler->addExtension('presenter', $ext);
 };
 
