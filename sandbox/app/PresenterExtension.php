@@ -41,4 +41,10 @@ class PresenterExtension extends Nette\DI\CompilerExtension
 			->addSetup('setXyz', [123, 456]);*/
 	}
 
+
+	function afterCompile(Nette\PhpGenerator\ClassType $class)
+	{
+		dump($class);
+	}
+
 }

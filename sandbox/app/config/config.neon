@@ -31,10 +31,6 @@ nette:
 extensions:
 #	presenter: PresenterExtension
 
-presenter:
-	data: 1234
-	hello: abc
-
 
 decorator:
 	Nette\Application\UI\Presenter:
