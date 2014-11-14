@@ -8,6 +8,7 @@ use Nette,
 
 /**
  * Homepage presenter.
+ * @persistent(gray1)
  */
 class HomepagePresenter extends BasePresenter
 {
