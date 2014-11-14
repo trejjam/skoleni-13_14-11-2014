@@ -53,4 +53,12 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 		return checkdate((int) $this->month, (int) $this->day, (int) $this->year);
 	}
 
+	public function validate()
+	{
+		parent::validate();
+		if (!$this->isValid()) {
+			$this->addError('Invalid date');
+		}
+	}
+
 }
