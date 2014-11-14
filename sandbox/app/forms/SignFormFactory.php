@@ -32,6 +32,7 @@ class SignFormFactory extends Nette\Object
 		);
 
 		$form = new Form;
+		$form->addGroup('skupina');
 		$form->addText('username', 'Username:')
 			->setRequired('Please enter your username.');
 

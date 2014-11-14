@@ -32,6 +32,7 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 
 	function getControl()
 	{
+		$this->setOption('rendered', true);
 		$name = $this->getHtmlName();
 		return
 			Html::el('input')->name($name . '[day]')->value($this->day)->id($this->getHtmlId())
