@@ -30,4 +30,9 @@ class HomepagePresenter extends BasePresenter
 		});
 	}
 
+	function createComponentComment()
+	{
+		return new \CommentControl;
+	}
+
 }
