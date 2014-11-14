@@ -13,10 +13,6 @@ class CommentControlFactory
 	{
 		$comment = new \CommentControl;
 
-		$res = Nette\Neon\Neon::decode('
-		a:
-		b}');
-
 		$comment->dataReader = function($id) {
 			return $this->db->query('SELECT 1');
 		};
