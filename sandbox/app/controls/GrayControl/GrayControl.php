@@ -20,7 +20,7 @@ class GrayControl extends Nette\Application\UI\Control
 		));
 	}
 
-	function handleChange($level)
+	function handleChange(/*$level*/)
 	{
 		//$this->level = $val;
 	}
