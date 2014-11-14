@@ -449,12 +449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/di.git",
-                "reference": "b7fd926ed73015e4a9e9507a2c65b289ae26ad99"
+                "reference": "0dbaadef1e3d1d52e7ea0fa6af54d2af384dce4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/di/zipball/b7fd926ed73015e4a9e9507a2c65b289ae26ad99",
-                "reference": "b7fd926ed73015e4a9e9507a2c65b289ae26ad99",
+                "url": "https://api.github.com/repos/nette/di/zipball/0dbaadef1e3d1d52e7ea0fa6af54d2af384dce4b",
+                "reference": "0dbaadef1e3d1d52e7ea0fa6af54d2af384dce4b",
                 "shasum": ""
             },
             "require": {
@@ -499,7 +499,7 @@
             ],
             "description": "Nette Dependency Injection Component",
             "homepage": "http://nette.org",
-            "time": "2014-11-08 17:49:45"
+            "time": "2014-11-13 23:32:19"
         },
         {
             "name": "nette/finder",
@@ -621,12 +621,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/http.git",
-                "reference": "1552e9c40b2c2e6b5c502c737d8e591d39ea29be"
+                "reference": "44d58c4c5c68e00a243db4ff143b19e3d565c9ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/http/zipball/1552e9c40b2c2e6b5c502c737d8e591d39ea29be",
-                "reference": "1552e9c40b2c2e6b5c502c737d8e591d39ea29be",
+                "url": "https://api.github.com/repos/nette/http/zipball/44d58c4c5c68e00a243db4ff143b19e3d565c9ae",
+                "reference": "44d58c4c5c68e00a243db4ff143b19e3d565c9ae",
                 "shasum": ""
             },
             "require": {
@@ -671,7 +671,7 @@
             ],
             "description": "Nette HTTP Component",
             "homepage": "http://nette.org",
-            "time": "2014-11-09 21:27:13"
+            "time": "2014-11-14 08:14:37"
         },
         {
             "name": "nette/mail",
@@ -929,12 +929,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/reflection.git",
-                "reference": "46c46460302913f42afc16c8307b2388107e33e2"
+                "reference": "adf8f21663b11c33b69076f42b4257fc7ba950d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/reflection/zipball/46c46460302913f42afc16c8307b2388107e33e2",
-                "reference": "46c46460302913f42afc16c8307b2388107e33e2",
+                "url": "https://api.github.com/repos/nette/reflection/zipball/adf8f21663b11c33b69076f42b4257fc7ba950d7",
+                "reference": "adf8f21663b11c33b69076f42b4257fc7ba950d7",
                 "shasum": ""
             },
             "require": {
@@ -978,7 +978,7 @@
             ],
             "description": "Nette PHP Reflection Component",
             "homepage": "http://nette.org",
-            "time": "2014-08-24 23:15:43"
+            "time": "2014-11-13 23:24:30"
         },
         {
             "name": "nette/robot-loader",
@@ -1266,12 +1266,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "0e48135b707b8ded6283dadf0c14357026bf0648"
+                "reference": "750cf885062a2a8a24dfbd88dccf3c7c63b964ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/0e48135b707b8ded6283dadf0c14357026bf0648",
-                "reference": "0e48135b707b8ded6283dadf0c14357026bf0648",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/750cf885062a2a8a24dfbd88dccf3c7c63b964ea",
+                "reference": "750cf885062a2a8a24dfbd88dccf3c7c63b964ea",
                 "shasum": ""
             },
             "require": {
@@ -1317,7 +1317,7 @@
                 "debugger",
                 "nette"
             ],
-            "time": "2014-11-13 00:10:05"
+            "time": "2014-11-13 22:17:36"
         }
     ],
     "packages-dev": [

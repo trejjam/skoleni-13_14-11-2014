@@ -5,11 +5,11 @@
 # http://nette.org/security-warning
 #
 parameters:
-	user: root
-	dbhost: 127.0.0.1
+
 
 php:
 	date.timezone: Europe/Prague
+
 
 nette:
 	application:
@@ -20,60 +20,8 @@ nette:
 	session:
 		expiration: 14 days
 
-	container:
-		debugger: yes
-
-	security:
-		users:
-			franta: xxx
-			pepa: yyy
-
-extensions:
-#	presenter: PresenterExtension
-
-
-decorator:
-	Nette\Application\UI\Presenter:
-	#	inject: yes
 
 services:
-	#- Nette\Security\SimpleAuthenticator([franta: xxx, pepa: yyy])
-
-	-
-		factory: PdoFactory::create('mysql:host=%dbhost%', %user%)
-		setup:
-			- setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)
-
-		#class: PDO
-
-	#pdofac2: PdoFactory2('mysql:host=%dbhost%')
-
-	#- @pdofac2::create(%user%)::query()
-
-	#- PdoFactory2('mysql:host=%dbhost%')::create(%user%)
-
-	- App\Model\Article(123)
-
-	#two: App\Model\Article(999)
-
-	#two: {factory: App\Model\Article(999)}
-
-	two:
-		factory: App\Model\Article(999)
-		autowired: no
-
-
-	form:
-		implement: FormFactory
-		parameters: [a]
-		factory: Nette\Application\UI\Form
-		setup:
-			- addText(name, Jméno, NULL, %a%)
-			- addSubmit(send, Odeslat)
-			- setTranslator()
-
-	translator: MyTranslator
-
-	#- App\Model\UserManager(..., ..., @two)
+	- App\Model\UserManager
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory()::createRouter

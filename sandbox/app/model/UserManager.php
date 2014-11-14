@@ -22,18 +22,11 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 
 	/** @var Nette\Database\Context */
 	private $database;
-	private $article;
 
 
-	public function __construct(
-		Nette\Database\Context $database,
-		Nette\Caching\IStorage $storage,
-		Article $article,
-		\PDO $pdo
-	)
+	public function __construct(Nette\Database\Context $database)
 	{
 		$this->database = $database;
-		$this->article = $article;
 	}
 
 
@@ -78,17 +71,6 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 			self::COLUMN_NAME => $username,
 			self::COLUMN_PASSWORD_HASH => Passwords::hash($password),
 		));
-	}
-
-}
-
-
-
-class Article /*implements \Inter*/
-{
-	function __construct($id)
-	{
-		$this->id = $id;
 	}
 
 }
