@@ -23,4 +23,11 @@ class HomepagePresenter extends BasePresenter
 		return new \GrayControl;
 	}
 
+	function createComponentMulti()
+	{
+		return new Nette\Application\UI\Multiplier(function($id) {
+			return new \GrayControl;
+		});
+	}
+
 }

@@ -10,3 +10,7 @@
 <a n:href="default">default</a>
 <a n:href="this">this</a>
 </p>
+
+{foreach [a, b, c] as $id}
+	{control multi-$id}
+{/foreach}
