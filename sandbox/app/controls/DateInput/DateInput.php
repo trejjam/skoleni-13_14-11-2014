@@ -1,6 +1,7 @@
 <?php
 
-use Nette\Utils\Html;
+use Nette\Utils\Html,
+	Nette\Forms\Form;
 
 class DateInput extends Nette\Forms\Controls\BaseControl
 {
@@ -31,7 +32,19 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 
 	function getControl()
 	{
-		return 'AHOJ';
+		$name = $this->getHtmlName();
+		return
+			Html::el('input')->name($name . '[day]')->value($this->day)
+			. Html::el('input')->name($name . '[month]')->value($this->month)
+			. Html::el('input')->name($name . '[year]')->value($this->year);
+	}
+
+
+	function loadHttpData()
+	{
+		$this->day = $this->getHttpData(Form::DATA_LINE, '[day]');
+		$this->month = $this->getHttpData(Form::DATA_LINE, '[month]');
+		$this->year = $this->getHttpData(Form::DATA_LINE, '[year]');
 	}
 
 }
