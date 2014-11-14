@@ -31,6 +31,14 @@ class SignPresenter extends BasePresenter
 
 	public function actionOut()
 	{
+		/*$this->getComponent('myForm')->getComponent('firstItem')
+			->getComponent('name');
+
+		$this['myForm']['firstItem']['name'];
+
+		$this['myForm-firstItem-name'];*/
+
+
 		$this->getUser()->logout();
 		$this->flashMessage('You have been signed out.');
 		$this->redirect('in');
