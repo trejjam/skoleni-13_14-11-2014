@@ -19,8 +19,19 @@ class RouterFactory
 	 */
 	public function createRouter()
 	{
+		//return new SimpleRouter('Homepage:default');
 		$router = new RouteList();
-		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+		//$router[] = new Route('sign', 'Sign:in');
+		//$router[] = new Route('<slug .+>', 'Sign:in');
+		$router[] = new Route('<presenter>/<action=default>[/<id>]', array(
+			'presenter' => array(
+				//Route::VALUE => 'Homepage',
+				//Route::PATTERN => ...,
+				Route::FILTER_TABLE => array(
+					'uvod' => 'Homepage'
+				),
+			),
+		));
 		return $router;
 	}
 

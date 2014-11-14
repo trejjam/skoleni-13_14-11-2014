@@ -18,6 +18,11 @@ class HomepagePresenter extends BasePresenter
 	public $commentFactory;
 
 
+	function renderDefault($id)
+	{
+
+	}
+
 	public function createComponentGray1()
 	{
 		return new \GrayControl;

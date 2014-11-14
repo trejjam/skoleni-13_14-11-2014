@@ -5,6 +5,15 @@
 
 {include '../components/form.latte', form => signInForm}
 
+{var $mask = $presenter->link('Homepage:default', 9999)}
+
+{foreach range(1,100) as $id}
+
+	<p>{$mask|replace:9999:$id}</p>
+
+{/foreach}
+
+
 {*
 {form signInForm}
 
