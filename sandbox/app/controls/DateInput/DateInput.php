@@ -1,5 +1,7 @@
 <?php
 
+use Nette\Utils\Html;
+
 class DateInput extends Nette\Forms\Controls\BaseControl
 {
 	private $day, $month, $year;
@@ -24,6 +26,12 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 		return $this->day
 			? new DateTime("$this->year-$this->month-$this->day")
 			: NULL;
+	}
+
+
+	function getControl()
+	{
+		return 'AHOJ';
 	}
 
 }
