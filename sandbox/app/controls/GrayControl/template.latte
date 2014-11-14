@@ -2,9 +2,9 @@
 <div class=gray style="background:rgb({$level}, {$level}, {$level})">
 
 </div>
-{$level}
+{$level} <a n:href="change $level + 50">plus</a> <a n:href="change $level - 50">minus</a>
 
-<style>
+<style n:syntax=off>
 .gray {
 	position: relative;
 	width: 100px;

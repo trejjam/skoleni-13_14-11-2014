@@ -10,4 +10,9 @@ class GrayControl extends Nette\Application\UI\Control
 		));
 	}
 
+	function handleChange($val)
+	{
+
+	}
+
 }
