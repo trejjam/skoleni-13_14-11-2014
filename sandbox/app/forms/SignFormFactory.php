@@ -31,6 +31,9 @@ class SignFormFactory extends Nette\Object
 		$form->addPassword('password', 'Password:')
 			->setRequired('Please enter your password.');
 
+		//$form->addComponent(new \DateInput, 'date');
+		$form['date'] = new \DateInput('Datum:');
+
 		$form->addCheckbox('remember', 'Keep me signed in');
 
 		$form->addSubmit('send', 'Sign in');
