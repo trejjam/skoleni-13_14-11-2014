@@ -3,8 +3,9 @@
 
 {*control signInForm*}
 
-{* or use {include '../components/form.latte', form => signInForm} *}
+{include '../components/form.latte', form => signInForm}
 
+{*
 {form signInForm}
 
 {input send}
@@ -14,3 +15,4 @@
 {/foreach}
 
 {/form}
+*}

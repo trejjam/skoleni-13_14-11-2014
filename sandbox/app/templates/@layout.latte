@@ -13,10 +13,12 @@
 	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
 	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css">
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	{block head}{/block}
 </head>
 
 <body>
+	<div class=container>
 	<script> document.documentElement.className+=' js' </script>
 
 	<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
@@ -28,5 +30,6 @@
 	<script src="{$basePath}/js/netteForms.js"></script>
 	<script src="{$basePath}/js/main.js"></script>
 	{/block}
+	</div>
 </body>
 </html>

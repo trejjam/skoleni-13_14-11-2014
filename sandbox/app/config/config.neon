@@ -20,6 +20,10 @@ nette:
 	session:
 		expiration: 14 days
 
+	latte:
+		macros:
+			- BootstrapMacro
+
 
 services:
 	-

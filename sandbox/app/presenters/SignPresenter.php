@@ -24,7 +24,7 @@ class SignPresenter extends BasePresenter
 		$form = $this->factory->create();
 		$this[$name] = $form;
 
-		dump( $form->getHttpData($form::DATA_LINE, 'files[]') );
+		//dump( $form->getHttpData($form::DATA_LINE, 'files[]') );
 
 		$form->onSuccess[] = function ($form) {
 			//$form->getPresenter()->redirect('Homepage:');
