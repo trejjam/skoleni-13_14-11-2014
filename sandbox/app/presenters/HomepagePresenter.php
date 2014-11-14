@@ -12,6 +12,8 @@ use Nette,
  */
 class HomepagePresenter extends BasePresenter
 {
+	/** @var \CommentControlFactory @inject */
+	public $commentFactory;
 
 	public function createComponentGray1()
 	{
