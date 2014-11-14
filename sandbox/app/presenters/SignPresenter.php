@@ -27,15 +27,23 @@ class SignPresenter extends BasePresenter
 
 		$form->addSelect('master', 'Master:', ['A', 'bb', 'xxx']);
 
-		$form->addSelect('slave', 'Slave:');
+		$this[$name] = $form;
+		$val = $form['master']->getValue();
+		$data = $val === NULL ? [] : $this->getData($val);
+		$form->addSelect('slave', 'Slave:', $data);
 
 		$form['master']
 			->setAttribute('data-slave', $form['slave']->getHtmlId())
 			->setAttribute('data-source', $this->link('getData'));
 
+		$form->addSubmit('send', 'Odeslat');
+
 		//dump( $form->getHttpData($form::DATA_LINE, 'files[]') );
 
 		$form->onSuccess[] = function ($form) {
+			dump($form->getValues());
+			dump($form->getHttpData($form::DATA_LINE, 'slave'));
+			dump($form['slave']->getRawValue());
 			//$form->getPresenter()->redirect('Homepage:');
 		};
 		return $form;
