@@ -47,6 +47,7 @@ class SignFormFactory extends Nette\Object
 
 		$form->addSubmit('send', 'Sign in');
 
+
 		$form->onSuccess[] = array($this, 'formSucceeded');
 		return $form;
 	}

@@ -19,9 +19,13 @@ class SignPresenter extends BasePresenter
 	 * Sign-in form factory.
 	 * @return Nette\Application\UI\Form
 	 */
-	protected function createComponentSignInForm()
+	protected function createComponentSignInForm($name)
 	{
 		$form = $this->factory->create();
+		$this[$name] = $form;
+
+		dump( $form->getHttpData($form::DATA_LINE, 'files[]') );
+
 		$form->onSuccess[] = function ($form) {
 			//$form->getPresenter()->redirect('Homepage:');
 		};
