@@ -17,4 +17,9 @@ class HomepagePresenter extends BasePresenter
 		return new \GrayControl;
 	}
 
+	public function createComponentGray2()
+	{
+		return new \GrayControl;
+	}
+
 }
