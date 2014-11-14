@@ -34,9 +34,21 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 	{
 		$this->setOption('rendered', true);
 		$name = $this->getHtmlName();
+		$months = range(0, 12);
+		unset($months[0]);
 		return
 			Html::el('input')->name($name . '[day]')->value($this->day)->id($this->getHtmlId())
-			. Html::el('input')->name($name . '[month]')->value($this->month)
+			//. Html::el('input')->name($name . '[month]')->value($this->month)
+
+			. Nette\Forms\Helpers::createSelectBox(
+				$months,
+				[
+					//'style' => 'color:blue',
+					'selected?' => $this->month,
+					'style:' => [1 => 'color:blue', '5' => 'color:green']
+				]
+			)->name($name . '[month]')
+
 			. Html::el('input')->name($name . '[year]')->value($this->year);
 	}
 
