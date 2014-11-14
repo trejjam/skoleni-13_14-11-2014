@@ -23,6 +23,7 @@ nette:
 
 services:
 	- CommentControlFactory
+	- BaseLayout
 	- App\Model\UserManager
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory()::createRouter

@@ -15,6 +15,16 @@ class HomepagePresenter extends BasePresenter
 	/** @var \CommentControlFactory @inject */
 	public $commentFactory;
 
+	/** @var \BaseLayout  @inject */
+	public $layout;
+
+
+	function beforeRender()
+	{
+		$this->layout->setTemplate($this->template);
+	}
+
+
 	public function createComponentGray1()
 	{
 		return new \GrayControl;
