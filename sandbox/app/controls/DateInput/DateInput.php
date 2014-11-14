@@ -21,7 +21,9 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 
 	function getValue()
 	{
-		return clone $this->val;
+		return $this->day
+			? new DateTime("$this->year-$this->month-$this->day")
+			: NULL;
 	}
 
 }
