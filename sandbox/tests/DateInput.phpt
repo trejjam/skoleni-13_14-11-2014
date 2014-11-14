@@ -19,3 +19,6 @@ Assert::null( $di->getValue() );
 $di = new DateInput;
 $di->setValue(new DateTime('2014-11-14'));
 Assert::equal( new DateTime('2014-11-14'), $di->getValue() );
+
+
+//echo date('j.n.Y', strtotime('2014-01-32'));

@@ -53,17 +53,7 @@ class SignFormFactory extends Nette\Object
 
 	public function formSucceeded($form, $values)
 	{
-		if ($values->remember) {
-			$this->user->setExpiration('14 days', FALSE);
-		} else {
-			$this->user->setExpiration('20 minutes', TRUE);
-		}
-
-		try {
-			$this->user->login($values->username, $values->password);
-		} catch (Nette\Security\AuthenticationException $e) {
-			$form->addError($e->getMessage());
-		}
+		dump($values);
 	}
 
 }

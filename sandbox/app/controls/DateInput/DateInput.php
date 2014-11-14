@@ -24,7 +24,7 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 
 	function getValue()
 	{
-		return $this->day
+		return $this->isValid()
 			? new DateTime("$this->year-$this->month-$this->day")
 			: NULL;
 	}
@@ -45,6 +45,12 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 		$this->day = $this->getHttpData(Form::DATA_LINE, '[day]');
 		$this->month = $this->getHttpData(Form::DATA_LINE, '[month]');
 		$this->year = $this->getHttpData(Form::DATA_LINE, '[year]');
+	}
+
+
+	private function isValid()
+	{
+		return checkdate((int) $this->month, (int) $this->day, (int) $this->year);
 	}
 
 }
