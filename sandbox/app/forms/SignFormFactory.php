@@ -24,6 +24,13 @@ class SignFormFactory extends Nette\Object
 	 */
 	public function create()
 	{
+		Nette\Object::extensionMethod(
+			'Nette\Forms\Container::addDate',
+			function($form, $name, $label = NULL) {
+				$form[$name] = new \DateInput($label);
+			}
+		);
+
 		$form = new Form;
 		$form->addText('username', 'Username:')
 			->setRequired('Please enter your username.');
@@ -32,7 +39,8 @@ class SignFormFactory extends Nette\Object
 			->setRequired('Please enter your password.');
 
 		//$form->addComponent(new \DateInput, 'date');
-		$form['date'] = new \DateInput('Datum:');
+		//$form['date'] = new \DateInput('Datum:');
+		$form->addDate('date', 'Datum:');
 
 		$form->addCheckbox('remember', 'Keep me signed in');
 
