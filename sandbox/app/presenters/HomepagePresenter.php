@@ -32,7 +32,11 @@ class HomepagePresenter extends BasePresenter
 
 	function createComponentComment()
 	{
-		return new \CommentControl;
+		$comment = new \CommentControl;
+		$comment->onDelete[] = function() {
+			$this->redirect('default');
+		};
+		return $comment;
 	}
 
 }
