@@ -34,7 +34,7 @@ class HomepagePresenter extends BasePresenter
 
 	function createComponentComment()
 	{
-		$comment = new \CommentControl;
+		$comment = $this->commentFactory->create();
 		$comment->onDelete[] = function() {
 			$this->redirect('default');
 		};

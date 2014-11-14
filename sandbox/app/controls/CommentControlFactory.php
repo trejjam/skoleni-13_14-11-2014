@@ -12,6 +12,9 @@ class CommentControlFactory
 	function create()
 	{
 		$comment = new \CommentControl;
+		$comment->dataReader = function($id) {
+			return $this->db->query('SELECT 1');
+		};
 		$comment->onDelete[] = function() {
 			$this->db->query('SELECT 1');
 		};
