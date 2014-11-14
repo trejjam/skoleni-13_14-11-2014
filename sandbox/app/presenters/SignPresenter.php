@@ -44,7 +44,7 @@ class SignPresenter extends BasePresenter
 
 	private function getData($val)
 	{
-		return range(1, rand(5, 10));
+		return range(rand(5,10), rand(5, 10));
 	}
 
 	function actionGetData($val)

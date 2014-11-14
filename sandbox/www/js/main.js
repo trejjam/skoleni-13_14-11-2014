@@ -1,6 +1,6 @@
 $(function(){
 
-	$('select[data-source]').change(function(){
+	$('body').on('change', 'select[data-source]', function(){
 		var source = $(this).data('source');
 		var slave = $(this).data('slave');
 		var selected = $(this).val();
