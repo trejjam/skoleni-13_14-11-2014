@@ -12,9 +12,9 @@ use Nette,
 class HomepagePresenter extends BasePresenter
 {
 
-	public function renderDefault()
+	public function createComponentGray1()
 	{
-		$this->template->anyVariable = 'any value';
+		return new \GrayControl;
 	}
 
 }
