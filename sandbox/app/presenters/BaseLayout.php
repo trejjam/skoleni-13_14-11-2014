@@ -11,3 +11,16 @@ class BaseLayout
 
 }
 
+
+
+trait BaseLayoutTrait
+{
+	/** @var \BaseLayout  @inject */
+	public $layout;
+
+	function beforeRender()
+	{
+		$this->layout->setTemplate($this->template);
+	}
+
+}
