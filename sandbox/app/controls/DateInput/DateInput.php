@@ -34,7 +34,7 @@ class DateInput extends Nette\Forms\Controls\BaseControl
 	{
 		$name = $this->getHtmlName();
 		return
-			Html::el('input')->name($name . '[day]')->value($this->day)
+			Html::el('input')->name($name . '[day]')->value($this->day)->id($this->getHtmlId())
 			. Html::el('input')->name($name . '[month]')->value($this->month)
 			. Html::el('input')->name($name . '[year]')->value($this->year);
 	}
