@@ -21,8 +21,17 @@ class SignPresenter extends BasePresenter
 	 */
 	protected function createComponentSignInForm($name)
 	{
-		$form = $this->factory->create();
-		$this[$name] = $form;
+		//$form = $this->factory->create();
+		$form = new Nette\Application\UI\Form;
+		//$this[$name] = $form;
+
+		$form->addSelect('master', 'Master:', ['A', 'bb', 'xxx']);
+
+		$form->addSelect('slave', 'Slave:');
+
+		$form['master']
+			->setAttribute('data-slave', $form['slave']->getHtmlId())
+			->setAttribute('data-source', $this->link('getData'));
 
 		//dump( $form->getHttpData($form::DATA_LINE, 'files[]') );
 
@@ -32,6 +41,17 @@ class SignPresenter extends BasePresenter
 		return $form;
 	}
 
+
+	private function getData($val)
+	{
+		return range(1, rand(5, 10));
+	}
+
+	function actionGetData($val)
+	{
+		$data = $val ? $this->getData($val) : NULL;
+		$this->sendJson($data);
+	}
 
 	public function actionOut()
 	{
