@@ -9,7 +9,8 @@ class CommentControl extends Nette\Application\UI\Control
 
 	function render($id)
 	{
-		echo 'KOMENTAR' . $id;
+		$this->template->getLatte()->setLoader(new \Latte\Loaders\StringLoader);
+		$this->template->render('<p>KOMENTAR {$id}</p>', ['id' => $id]);
 	}
 
 }
