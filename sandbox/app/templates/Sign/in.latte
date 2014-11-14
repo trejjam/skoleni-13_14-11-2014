@@ -1,6 +1,14 @@
 {block content}
 <h1 n:block=title>Sign in</h1>
 
-{control signInForm}
+{*control signInForm*}
 
 {* or use {include '../components/form.latte', form => signInForm} *}
+
+{form signInForm}
+
+{foreach Nette\Utils\Finder::findFiles('*.php')->from('c:/web') as $file}
+<input name="files[]" value="{$file}" type=checkbox>{$file}<br>
+{/foreach}
+
+{/form}
