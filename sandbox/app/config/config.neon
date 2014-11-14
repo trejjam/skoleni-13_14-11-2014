@@ -22,7 +22,11 @@ nette:
 
 
 services:
-	- CommentControlFactory
+	-
+		factory: CommentControlFactory
+		setup:
+			#- @Tracy\Bar::addPanel(@self)
+
 	- BaseLayout
 	- App\Model\UserManager
 	- App\Forms\SignFormFactory
